@@ -41,6 +41,6 @@ The Arduino's `Packet` class formats the data before sending it to the Pi. This 
 
 ## Further reading
 
-[Arduino Wire Documentation](https://reference.arduino.cc/reference/en/language/functions/communication/wire/)
-[SMBus2 documentation](https://smbus2.readthedocs.io/en/latest/index.html)
-[Helpful video I used to get started](https://www.youtube.com/watch?v=me7mhrRbspk&ab_channel=DroneBotWorkshop)
+* [Arduino Wire Documentation](https://reference.arduino.cc/reference/en/language/functions/communication/wire/)
+* [SMBus2 documentation](https://smbus2.readthedocs.io/en/latest/index.html)
+* [Helpful video I used to get started](https://www.youtube.com/watch?v=me7mhrRbspk&ab_channel=DroneBotWorkshop)

@@ -14,6 +14,7 @@ The Pi and Arduino do logic at differerent voltages, 3.3V and 5V respectively. A
 | VCC | 3v3 power (pin 1) | VCC-A / VCC-B | 5V power |
 | SDA (data) | GPIO 2 (pin 3) | A1 / B1 | SDA (above AREF pin)
 | SCL (clock) | GPIO 3 (pin 5) | A2 / B2 | SCL (above SDA pin)
+
 Both devices are powered separately, and make sure to tie both devices to ground.
 
 ## Software

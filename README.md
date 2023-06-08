@@ -5,7 +5,7 @@ A Raspberry Pi 4B and an Arduino Leonardo were used for testing.
 
 ## Hardware setup
 
-![Hardware](img/hardware.png)
+![Hardware](img/hardware_connections.png)
 
 The Pi and Arduino do logic at differerent voltages, 3.3V and 5V respectively. A direct connection between the two is fine if you only send data from the Pi to the Arduino, but a bidirectional logic level converter is necessary if data is being transferred the other way (otherwise you risk damaging the Pi). The connections are as follows:
 

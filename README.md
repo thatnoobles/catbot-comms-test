@@ -21,6 +21,8 @@ Both devices are powered separately, and make sure to tie both devices to ground
 
 #### Overview
 
+> (see _comms\_demo_ directory)
+
 Specific parts of code are commented to explain what each section does, but here is an overview of how the communication works:
 * The Pi detects the Arduino as an I2C device, in this case with the address `0x0A`.
 * When the Pi needs data from the Arduino, it uses the SMBus Python module to attempt to read some number of bytes from the I2C bus. When it does this, it also sends a single byte to the Arduino that represents the type of data it needs.
@@ -38,6 +40,14 @@ The Arduino's `Packet` class formats the data before sending it to the Pi. This 
 **Data length (bits 4-7):** Represents the length of the **Data** section, in bytes. The Pi doesn't know how large a response packet might be, so it uses this section as a reference for that. I2C does not have a hard limit to how much data can be sent at once, but for compactness I've made this section 4 bits (for a maximum of 15 bytes of actual data).
 
 **Data:** Contains the actual information that the Arduino is sending to the Pi.
+
+## Threading test
+
+> (see _thread\_test_ directory)
+
+I've added a small, simple test that demonstrates a multithreaded approach on the Python side. The main thread updates a constantly-changing value received from the Arduino, and a second thread is created to print that value after pressing Enter. In reality, this second thread would be used to perform necessary operations on the received value.
+
+This method seems to work okay with the timings I'm using currently. However, making the delay shorter between I2C reads increases the chance of Python throwing `OSError: [Errno 121] Remote I/O error`. It might take some trial-and-error to get the timings between the Pi and Arduino right - short enough where data flows as quickly as we need it to, but long enough where this error doesn't come up.
 
 ## Further reading
 
